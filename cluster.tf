@@ -2,7 +2,7 @@
 resource "aws_elasticache_cluster" "redis" {
   cluster_id           = "roboshop-${var.ENV}-redis"
   engine               = "redis"
-  node_type            = "cache.m4.large"
+  node_type            = "cache.t3.small"
   num_cache_nodes      = 1
   parameter_group_name = aws_elasticache_parameter_group.redis.name
   subnet_group_name    = aws_elasticache_subnet_group.redis.name
