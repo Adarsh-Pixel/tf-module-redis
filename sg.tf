@@ -6,8 +6,8 @@ resource "aws_security_group" "allows_redis" {
 
   ingress {
     description              = "redis from private network"
-    from_port                = 6379
-    to_port                  = 6379
+    from_port                = var.REDIS_PORT
+    to_port                  = var.REDIS_PORT
     protocol                 = "tcp"
     cidr_blocks              = [data.terraform_remote_state.vpc.outputs.VPC_CIDR]
   }
